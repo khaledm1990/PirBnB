@@ -26,3 +26,10 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+ CLEARANCE
+  gives u automatic
+  controllers (password, session, user) => login, signup, logout
+  views (rails generate clearance:views)
+  routes (rails generate clearance:routes) set config.routes = false then only u can use whatever u customise on your config/routes file
+
