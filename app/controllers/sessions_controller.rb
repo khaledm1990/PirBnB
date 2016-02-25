@@ -27,7 +27,7 @@ class SessionsController < Clearance::SessionsController
         redirect_back_or url_after_create
       else
         flash.now.notice = status.failure_message
-        render template: "home/index"
+        render template: "/"
       end
     end
   end
@@ -48,7 +48,7 @@ class SessionsController < Clearance::SessionsController
           @notice = "User created - confirm or edit details..."
         end
         sign_in(user)
-        redirect_to '/user', :notice => @notice
+        redirect_to '/', :notice => @notice
    end
 
 

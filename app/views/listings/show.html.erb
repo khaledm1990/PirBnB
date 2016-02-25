@@ -1,0 +1,73 @@
+ <div class="col-sm-6 col-sm-offset-3" id="clearance" class="sign-up">
+<h1>My  list</h1>
+
+
+
+
+<div id="paintings">
+  <div class="painting">
+    <%= image_tag @list.image_url(:thumb).to_s %>
+    <div class="actions">
+      <%= link_to "edit", edit_listing_path(@list), method: :get %> |
+      <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+
+  <tr>
+    <td>descriptions</td>
+    <td><%=@list.descriptions%></td>
+  </tr>
+  <tr>
+    <td>property_type</td>
+    <td><%=@list.property_type%></td>
+  </tr>
+  <tr>
+    <td>room_type</td>
+    <td><%=@list.room_type%></td>
+  </tr>
+  <tr>
+    <td>acommmodates</td>
+    <td><%=@list.acommmodates%></td>
+  </tr>
+  <tr>
+    <td>bedrooms</td>
+    <td><%=@list.bedrooms%></td>
+  </tr>
+  <tr>
+    <td>beds</td>
+    <td><%=@list.beds%></td>
+  </tr>
+  <tr>
+    <td>bathrooms</td>
+    <td><%=@list.bathrooms%></td>
+  </tr>
+  <tr>
+    <td>country</td>
+    <td><%=@list.country%></td>
+  </tr>
+  <tr>
+    <td>street</td>
+    <td>%=@list.street%></td>
+  </tr>
+
+    <tr>
+    <td>city</td>
+    <td><%=@list.city%></td>
+  </tr>
+    <tr>
+    <td>zip_code</td>
+    <td><%=@list.zip_code%></td>
+  </tr>
+</table>
+
+</div>
+
+
+
+
+
