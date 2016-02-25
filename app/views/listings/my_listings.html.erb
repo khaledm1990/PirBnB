@@ -1,0 +1,17 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">My listings</h1>
+  </div>
+  <div class="panel-body">
+
+       <% @my_listings.each do |list| %>
+       <%= link_to list.descriptions, listing_path(list) %><br>
+       <% end %>
+
+  </div>
+</div>
+
+
+
+

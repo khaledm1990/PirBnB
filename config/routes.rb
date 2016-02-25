@@ -7,7 +7,6 @@ Rails.application.routes.draw do
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
   end
-
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
@@ -20,9 +19,13 @@ Rails.application.routes.draw do
   get "/user" => "users#user_profile", as: "user"
 
   # You can have the root of your site routed with "root"
-  root "home#index"
+  root "listings#index"
 
   resources :users, only: [:show, :edit, :update, :destroy]
+  resources :listings
+
+  get "/my_listings", to: "listings#my_listings" , as: "my_listings"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,75 @@
+ <div class="col-sm-6 col-sm-offset-3" id="clearance" class="sign-up">
+<h1>My  list</h1>
+
+<div class="form-group ">
+<h4>descriptions</h4>
+<h6><%=@list.descriptions%></h6 >
+</div>
+
+<div class="form-group ">
+<h4>property_type</h4>
+<h6><%=@list.property_type%></h6 >
+</div>
+
+<div class="form-group ">
+<h4>room_type</h4>
+<h6><%=@list.room_type%></h6>
+</div>
+
+<div class="form-group ">
+<h4>acommmodates</h4>
+<h6><%=@list.acommmodates%></h6>
+</div>
+
+<div class="form-group ">
+<h4>bedrooms</h4>
+<h6><%=@list.bedrooms%></h6>
+</div>
+
+<div class="form-group ">
+<h4>beds</h4>
+<h6><%=@list.beds%></h6>
+</div>
+
+<div class="form-group ">
+<h4>bathrooms</h4>
+<h6><%=@list.bathrooms%></h6>
+</div>
+
+<div class="form-group ">
+<h4>country</h4>
+<h6><%=@list.country%></h6>
+</div>
+
+<div class="form-group ">
+<h4>street</h4>
+<h6><%=@list.street%></h6>
+</div>
+
+<div class="form-group ">
+<h4>city</h4>
+<h6><%=@list.city%></h6>
+</div>
+
+<div class="form-group ">
+<h4>state</h4>
+<h6><%=@list.state%></h6>
+</div>
+
+<div class="form-group ">
+<h4>zip_code</h2>
+<h6><%=@list.zip_code%></h6 >
+</div>
+
+<div class="btn-group">
+  <%= link_to "Delete" ,listing_path(@list) , method: :delete %>
+  <%= link_to "Edit" , edit_listing_path(@list), method: :get %>
+
+</div>
+
+</div>
+
+
+
+
+
