@@ -11,7 +11,9 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listing = Listing.all
+    # byebug
+    @listings = Listing.all
+    # byebug
   end
 
   def my_listings
@@ -27,6 +29,7 @@ class ListingsController < ApplicationController
 
 
   def create
+    # byebug
 
     @listing = current_user.listings.new(listing_params)
 
@@ -42,6 +45,8 @@ class ListingsController < ApplicationController
 end
 
   def update
+    # byebug
+    @listing.remove_image! if params[:listing][:remove_image] == "1"
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to listing_path, notice: 'listing was successfully updated.' }
@@ -70,7 +75,7 @@ end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def listing_params
-    params.require(:listing).permit(:descriptions,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :street, :city, :state, :zip_code)
+    params.require(:listing).permit(:image,:descriptions,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :street, :city, :state, :zip_code, :image)
   end
 
 end

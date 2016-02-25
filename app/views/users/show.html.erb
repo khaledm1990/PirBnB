@@ -1,0 +1,47 @@
+ <div class="col-sm-6 col-sm-offset-3" id="clearance" class="sign-up">
+<h1>My  Profile</h1>
+
+
+
+
+<div id="paintings">
+  <div class="painting">
+    <%= image_tag current_user.image_url(:thumb).to_s %>
+    <div class="actions">
+      <%= link_to "edit", edit_user_path(current_user), method: :get %> |
+      <%= link_to "remove the list" ,user_path(current_user), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+
+
+
+<table class="table table-striped">
+  <tr>
+    <td>Email</td>
+    <td><%= current_user.email %></td>
+  </tr>
+  <tr>
+    <td>First_name</td>
+    <td><%= current_user.first_name %></td>
+  </tr>
+
+  <tr>
+    <td>last_name</td>
+    <td><%= current_user.last_name %></td>
+  </tr>
+</table>
+
+<div class="btn-group">
+  <%= link_to "Delete" ,user_path(current_user) , method: :delete %>
+  <%= link_to "Edit" , edit_user_path(current_user), method: :get %>
+
+</div>
+
+</div>
+
+
+
+
+

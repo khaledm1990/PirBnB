@@ -26,6 +26,9 @@ gem 'clearance'
 gem "figaro"
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
+
 
 # gem 'bootstrap-sass'
 

@@ -1,5 +1,14 @@
 
 <%= form_for(@listing) do |form| %>
+
+<div class="form-group " >
+ <%= form.label :list_image %>
+ <%= image_tag @listing.image_url.to_s if @listing.image? %>
+  <%= form.file_field :image  %>
+
+</div>
+
+
 <div class="form-group " >
  <%= form.label :descriptions %>
  <%= form.text_field :descriptions, type: "text", class: "form-control", placeholder: "" %>

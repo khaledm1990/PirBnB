@@ -9,6 +9,25 @@
 <body>
 
 <h1>Index</h1>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">All listings</h1>
+  </div>
+  <div class="panel-body">
+
+       <% @listings.each do |list| %>
+
+       <%= list.descriptions %><br>
+       <% end %>
+
+  </div>
+</div>
+
+
+
+
     <div class="jumbotron">
       <div class="container">
         <h1>Find a place to stay.</h1>

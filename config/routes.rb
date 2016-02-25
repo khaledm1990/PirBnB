@@ -16,7 +16,7 @@ Rails.application.routes.draw do
    get "/auth/:prvider/callback" => "sessions#create_from_omniauth"
 
 # resources users ::::: show alll th routes
-  get "/user" => "users#user_profile", as: "user"
+  get "/user" => "users#show", as: "user_profile"
 
   # You can have the root of your site routed with "root"
   root "listings#index"
