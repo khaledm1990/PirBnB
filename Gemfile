@@ -26,7 +26,7 @@ gem 'clearance'
 gem "figaro"
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'carrierwave'
+gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'rmagick'
 
 
