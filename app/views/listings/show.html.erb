@@ -2,20 +2,25 @@
 <h1>My  list</h1>
 
 
+<% if @list.images %>
+<% @list.images.each do |x| %>
+  <div id="paintings" >
+    <div class="painting">
+        <%= image_tag x.url %>
+    <div class="clear"></div>
+    </div>
 
+  </div>
+  <% end %>
+<% end %>
+<div class="row">
 
-<div id="paintings">
-  <div class="painting">
-  <% byebug %>
-    <%= image_tag @list.image_url(:thumb).to_s if @list.images %>
-    <div class="actions">
-      <%= link_to "edit", edit_listing_path(@list), method: :get %> |
-      <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-  <div class="clear"></div>
-  </div>
 </div>
 
+<div class="actions">
+    <%= link_to "edit", edit_listing_path(@list), method: :get %> |
+    <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
 
 <table class="table table-striped">
 

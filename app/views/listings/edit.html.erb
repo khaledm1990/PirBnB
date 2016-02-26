@@ -4,11 +4,10 @@
 
 
 <div class="form-group " >
- <%= form.label :list_image %>
- <%= image_tag @listing.image_url.to_s if @listing.image? %>
-  <%= form.file_field :image  %>
+ <%= form.label :list_images %>
+  <%= form.file_field :images  %>
   <label>
-    <%= form.check_box :remove_image %>
+    <%= form.check_box :remove_images %>
     Remove image
   </label>
 </div>
