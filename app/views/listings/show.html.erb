@@ -6,7 +6,8 @@
 
 <div id="paintings">
   <div class="painting">
-    <%= image_tag @list.image_url(:thumb).to_s %>
+  <% byebug %>
+    <%= image_tag @list.image_url(:thumb).to_s if @list.images %>
     <div class="actions">
       <%= link_to "edit", edit_listing_path(@list), method: :get %> |
       <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>

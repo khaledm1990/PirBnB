@@ -75,7 +75,9 @@ end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def listing_params
-    params.require(:listing).permit(:image,:descriptions,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :street, :city, :state, :zip_code, :image)
+    params.require(:listing).permit(:descriptions,:property_type, :room_type, :acommmodates, :bedrooms, :beds, :bathrooms, :country, :street, :city, :state, :zip_code, {images: []})
+      # {images: []})
   end
+
 
 end

@@ -6,10 +6,10 @@
 
 <div id="paintings">
   <div class="painting">
-    <%= image_tag current_user.image_url(:thumb).to_s %>
+    <%= image_tag current_user.image_url(:thumb).to_s if current_user.image %>
     <div class="actions">
       <%= link_to "edit", edit_user_path(current_user), method: :get %> |
-      <%= link_to "remove the list" ,user_path(current_user), :confirm => 'Are you sure?', :method => :delete %>
+      <%= link_to "remove my account" ,user_path(current_user), :confirm => 'Are you sure?', :method => :delete %>
   </div>
   <div class="clear"></div>
   </div>

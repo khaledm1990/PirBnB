@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-mount_uploader :image, AvatarUploader
+mount_uploader :images, AvatarUploader
 belongs_to :user
 
 end
