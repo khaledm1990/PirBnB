@@ -2,8 +2,8 @@
 <h1>My  list</h1>
 
 
-<% if @list.images %>
-<% @list.images.each do |x| %>
+<% if @listing.images %>
+<% @listing.images.each do |x| %>
   <div id="paintings" >
     <div class="painting">
         <%= image_tag x.url %>
@@ -18,56 +18,59 @@
 </div>
 
 <div class="actions">
-    <%= link_to "edit", edit_listing_path(@list), method: :get %> |
-    <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to "edit", edit_listing_path(@listing), method: :get %> |
+    <%= link_to "remove the list" ,listing_path(@listing), :confirm => 'Are you sure?', :method => :delete %>
   </div>
 
 <table class="table table-striped">
-
+   <tr>
+    <td>ID</td>
+    <td><%=@listing.id%></td>
+  </tr>
   <tr>
     <td>descriptions</td>
-    <td><%=@list.descriptions%></td>
+    <td><%=@listing.descriptions%></td>
   </tr>
   <tr>
     <td>property_type</td>
-    <td><%=@list.property_type%></td>
+    <td><%=@listing.property_type%></td>
   </tr>
   <tr>
     <td>room_type</td>
-    <td><%=@list.room_type%></td>
+    <td><%=@listing.room_type%></td>
   </tr>
   <tr>
     <td>acommmodates</td>
-    <td><%=@list.acommmodates%></td>
+    <td><%=@listing.acommmodates%></td>
   </tr>
   <tr>
     <td>bedrooms</td>
-    <td><%=@list.bedrooms%></td>
+    <td><%=@listing.bedrooms%></td>
   </tr>
   <tr>
     <td>beds</td>
-    <td><%=@list.beds%></td>
+    <td><%=@listing.beds%></td>
   </tr>
   <tr>
     <td>bathrooms</td>
-    <td><%=@list.bathrooms%></td>
+    <td><%=@listing.bathrooms%></td>
   </tr>
   <tr>
     <td>country</td>
-    <td><%=@list.country%></td>
+    <td><%=@listing.country%></td>
   </tr>
   <tr>
     <td>street</td>
-    <td>%=@list.street%></td>
+    <td>%=@listing.street%></td>
   </tr>
 
     <tr>
     <td>city</td>
-    <td><%=@list.city%></td>
+    <td><%=@listing.city%></td>
   </tr>
     <tr>
     <td>zip_code</td>
-    <td><%=@list.zip_code%></td>
+    <td><%=@listing.zip_code%></td>
   </tr>
 </table>
 

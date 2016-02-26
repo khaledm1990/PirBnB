@@ -26,9 +26,12 @@ gem 'clearance'
 gem "figaro"
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
+gem 'fog-aws'
 gem 'rmagick'
 gem 'mini_magick'
+gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
+
+
 
 
 # gem 'bootstrap-sass'
