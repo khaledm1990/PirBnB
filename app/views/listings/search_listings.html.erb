@@ -1,0 +1,40 @@
+
+
+<div class="containrer">
+  <div class="row">
+    <% @listings.each do |listing| %>
+    <div class="col-md-4">
+      <div class="container">
+       <div class="row">
+         <div class="col-sm-4 col-md-4">
+          <% if listing.images.present? %>
+            <div class="post" style="background-image: url(<%= listing.images.first.url %>); background-size: 100%; background-repeat: false;">
+          <% else %>
+            <div class="post">
+          <% end %>
+             <div class="post-img-content">
+              <span class="post-title"><b><%= listing.country%></b><br />
+               <b>$ <%= listing.price%> </b></span>
+             </div>
+             <div class="content">
+               <div class="author">
+                 <b><%= listing.property_type%></b> | <%= listing.city %>
+               </div>
+
+             </br>
+             <div>
+               <%= link_to 'Read more', listing_path(listing.id), class: "btn btn-warning btn-sm" %>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <% end %>
+</div>
+</div>
+
+
+
+
