@@ -1,72 +1,96 @@
- <div class="col-sm-6 col-sm-offset-3" id="clearance" class="sign-up">
-<h1>My  list</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-1 " >
+    <h1>My  list</h1>
 
 
+    <div id="paintings">
+      <div class="painting">
+        <%= image_tag @list.image_url(:thumb).to_s %>
+      <div class="clear"></div>
+      </div>
+    </div>
 
+    <table class="table table-striped">
 
-<div id="paintings">
-  <div class="painting">
-    <%= image_tag @list.image_url(:thumb).to_s %>
-    <div class="actions">
-      <%= link_to "edit", edit_listing_path(@list), method: :get %> |
-      <%= link_to "remove the list" ,listing_path(@list), :confirm => 'Are you sure?', :method => :delete %>
+      <tr>
+        <td>Title</td>
+        <td><%=@listing.title%></td>
+      </tr>
+      <tr>
+        <td>property_type</td>
+        <td><%=@listing.property_type%></td>
+      </tr>
+      <tr>
+        <td>room_type</td>
+        <td><%=@listing.room_type%></td>
+      </tr>
+      <tr>
+        <td>acommodates</td>
+        <td><%=@listing.acommodates%></td>
+      </tr>
+      <tr>
+        <td>bedrooms</td>
+        <td><%=@listing.bedrooms%></td>
+      </tr>
+      <tr>
+        <td>beds</td>
+        <td><%=@listing.beds%></td>
+      </tr>
+      <tr>
+        <td>bathrooms</td>
+        <td><%=@listing.bathrooms%></td>
+      </tr>
+      <tr>
+        <td>country</td>
+        <td><%=@listing.country%></td>
+      </tr>
+
+      <tr>
+        <td>city</td>
+        <td><%=@listing.city%></td>
+      </tr>
+
+      <tr>
+        <td>zip_code</td>
+        <td><%=@listing.zip_code%></td>
+      </tr>
+    </table>
+
+    <div>
+      <label> About</label>
+      <p><%= @listing.about %> </p>
+    </div>
+
+    <div class="row">
+      <div >
+        <div class="btn btn-eafult btn-lg btn-block">
+        <%= link_to t(".edit_listing"), edit_listing_path(@listing), class: "btn btn-success" %>
+        </div>
+        <div class="btn btn-deafult btn-lg btn-block">
+            <%= link_to "delete", listing_path(@listing), method: :delete, class: "btn btn-danger" %>
+        </div>
+        <div class="btn btn-eafult btn-lg btn-block">
+            <%= link_to "Reservations", listing_reservations_path(@listing), method: :get, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div class="clear"></div>
+  <div class="col-md-4">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"> <%= link_to @listing.user.first_name %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="btn btn-deafult btn-lg btn-block">
+            <%= link_to "Book",new_listing_reservation_path(@listing.id), method: :get, class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
-<table class="table table-striped">
-
-  <tr>
-    <td>descriptions</td>
-    <td><%=@list.descriptions%></td>
-  </tr>
-  <tr>
-    <td>property_type</td>
-    <td><%=@list.property_type%></td>
-  </tr>
-  <tr>
-    <td>room_type</td>
-    <td><%=@list.room_type%></td>
-  </tr>
-  <tr>
-    <td>acommmodates</td>
-    <td><%=@list.acommmodates%></td>
-  </tr>
-  <tr>
-    <td>bedrooms</td>
-    <td><%=@list.bedrooms%></td>
-  </tr>
-  <tr>
-    <td>beds</td>
-    <td><%=@list.beds%></td>
-  </tr>
-  <tr>
-    <td>bathrooms</td>
-    <td><%=@list.bathrooms%></td>
-  </tr>
-  <tr>
-    <td>country</td>
-    <td><%=@list.country%></td>
-  </tr>
-  <tr>
-    <td>street</td>
-    <td>%=@list.street%></td>
-  </tr>
-
-    <tr>
-    <td>city</td>
-    <td><%=@list.city%></td>
-  </tr>
-    <tr>
-    <td>zip_code</td>
-    <td><%=@list.zip_code%></td>
-  </tr>
-</table>
-
-</div>
-
 
 
 

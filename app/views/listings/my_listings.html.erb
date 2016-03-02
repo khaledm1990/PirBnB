@@ -6,7 +6,7 @@
   <div class="panel-body">
 
        <% @my_listings.each do |list| %>
-       <%= link_to list.descriptions, listing_path(list) %><br>
+       <%= link_to list.title, listing_path(list) %><br>
        <% end %>
 
   </div>
