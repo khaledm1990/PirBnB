@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //  require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+$('#daterange').daterangepicker({
+    "autoApply": true,
+    "startDate": "02/25/2016",
+    "endDate": "03/02/2016"
+}, function(start, end, label) {
+  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+});
+
+    $('#data_table').DataTable( {
+        "order": [[ 3, "desc" ]]
+     });
+})

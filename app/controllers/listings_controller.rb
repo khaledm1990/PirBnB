@@ -30,19 +30,18 @@ class ListingsController < ApplicationController
 
   def create
     # byebug
-
     @listing = current_user.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to my_listings_path , notice: 'listing was successfully created.' }
+        format.html { redirect_to listing_path(@listing.id) , notice: 'listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
+    end
   end
-end
 
   def update
     # byebug
@@ -59,6 +58,7 @@ end
   end
 
   def destroy
+    # byebug
     @listing.destroy
     respond_to do |format|
       format.html { redirect_to my_listings_path, notice: 'listing was successfully destroyed.' }
@@ -74,9 +74,8 @@ end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def listing_params
-    params.require(:listing).permit(:descriptions,:property_type, :room_type, :acommmodates, :bedrooms, :beds, :bathrooms, :country, :street, :city, :state, :zip_code, {images: []})
-      # {images: []})
+
+    params.require(:listing).permit(:image,:about, :title, :adress,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :city, :state, :zip_code, :image)
   end
 
 

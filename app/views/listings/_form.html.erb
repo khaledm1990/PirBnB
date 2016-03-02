@@ -1,5 +1,5 @@
 
-<%= form_for(@listing) do |form| %>
+
 
 <div class="form-group " >
  <%= form.label :images %>
@@ -8,71 +8,91 @@
 
 </div>
 
+<div class="form-group " >
+ <%= form.label :title %>
+ <%= form.text_field :title, type: "text", class: "form-control", placeholder: "" %>
+</div>
+
 
 <div class="form-group " >
- <%= form.label :descriptions %>
- <%= form.text_field :descriptions, type: "text", class: "form-control", placeholder: "" %>
+ <%= form.label :about %>
+ <%= form.text_area :about, type: "text", class: "form-control", placeholder: "" %>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group ">
+      <%= form.label :property_type %>
+      <%= form.select :property_type, ['Apartment', 'House', 'Bed & Breakfast'], required: true %>
+    </div>
+  </div>
+
+  <div class="col-xs-6">
+    <div class="form-group ">
+      <%= form.label :room_type %>
+      <%= form.select :room_type, ['Entire home/apt', 'Private room', 'Shared room'], required: true %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-4">
+
+    <div class="form-group ">
+      <%= form.label :bedrooms %>
+      <%= form.select :bedrooms, [1,2,3,4,5], required: true %>
+    </div>
+  </div>
+  <div class="col-xs-4">
+
+    <div class="form-group ">
+      <%= form.label :bathrooms %>
+      <%= form.select :bathrooms, [1,2,3,4,5], required: true %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+
+    <div class="form-group ">
+      <%= form.label :acommodates %>
+      <%= form.select :acommodates, [1,2,3,4,5,6,7,8], class: "form-control", required: true %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+
+    <div class="form-group ">
+      <%= form.label :beds %>
+      <%= form.select :beds, [1,2,3,4,5,6,7,8], class: "form-control", required: true %>
+    </div>
+  </div>
+
 </div>
 
 <div class="form-group ">
- <%= form.label :property_type %>
- <%= form.text_field :property_type, type: "text", class: "form-control", placeholder: "apartment/house/villa" %>
+  <%= form.label :address %>
+  <%= form.text_field :address, type: "text", class: "form-control", placeholder: "unit number and street address", required: true %>
 </div>
 
 <div class="form-group ">
- <%= form.label :room_type %>
- <%= form.text_field :room_type, type: "text", class: "form-control",placeholder: "private or share" %>
+  <%= form.label :city %>
+  <%= form.text_field :city, type: "text", class: "form-control", placeholder: "city", required: true %>
 </div>
 
 <div class="form-group ">
- <%= form.label :acommmodates %>
- <%= form.email_field :acommmodates, type: "text", class: "form-control",placeholder: "number of occupants" %>
+  <%= form.label :state %>
+  <%= form.text_field :state, type: "text", class: "form-control", placeholder: "state/province", required: true %>
 </div>
 
 <div class="form-group ">
- <%= form.label :bedrooms %>
- <%= form.email_field :bedrooms, type: "text", class: "form-control",placeholder: "number of bedrooms 1,2.." %>
+  <%= form.label :zip_code %>
+  <%= form.text_field :zip_code, type: "text", placeholder: "zipcode", class: "form-control" %>
 </div>
 
 <div class="form-group ">
- <%= form.label :beds %>
- <%= form.email_field :beds, type: "text", class: "form-control", placeholder: "number of beds 1,2,..." %>
+  <%= form.label :country %>
+  <%= form.text_field :country, type: "text", class: "form-control", placeholder: "country", required: true %>
 </div>
-
-<div class="form-group ">
- <%= form.label :bathrooms %>
- <%= form.email_field :bathrooms, type: "text", class: "form-control" ,placeholder: "number of bathrooms 1,2,..." %>
-</div>
-
-<div class="form-group ">
- <%= form.label :country %>
- <%= form.email_field :country, type: "text", class: "form-control",placeholder: "ex : malaysia" %>
-</div>
-
-<div class="form-group ">
- <%= form.label :street %>
- <%= form.email_field :street, type: "text", class: "form-control",placeholder: "ex : Cross street" %>
-</div>
-
-<div class="form-group ">
- <%= form.label :city %>
- <%= form.email_field :city, type: "text", class: "form-control",placeholder: "ex : london " %>
-</div>
-
-<div class="form-group ">
- <%= form.label :state %>
- <%= form.email_field :state, type: "text", class: "form-control" ,placeholder: "ex : selangor"%>
-</div>
-
-<div class="form-group ">
- <%= form.label :zip_code %>
- <%= form.email_field :zip_code, type: "text", class: "form-control", placeholder: "ex : 43000"%>
-</div>
-
-<div>
-  <%= form.submit class: "btn btn-success" %>
-
-</div>
-
-<%end%>
 

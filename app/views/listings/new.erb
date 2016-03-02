@@ -1,6 +1,14 @@
-  <div class="col-sm-6 col-sm-offset-3" id="clearance" class="sign-up">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-3 col-lg-6 col-lg-offset-3" id="listing">
+  <center>
+    <h2><%= t(".new_listing") %></h2>
+  </center>
 
+  <%= form_for @listing, html: { multipart: true } do |form| %>
+    <%= render partial: '/listings/form', object: form %>
+    <%= form.submit class: "btn btn-success" %>
 
-    <%= render partial: 'form' %>
+  <% end %>
 
+  </div>
 </div>

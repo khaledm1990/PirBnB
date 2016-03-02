@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
+  resources :reservations, only: [:show]
 
   resources :users, controller: "users", only: [:create] do
     resource :password,
@@ -22,9 +23,13 @@ Rails.application.routes.draw do
   root "listings#index"
 
   resources :users, only: [:show, :edit, :update, :destroy]
-  resources :listings
+
+  resources :listings do
+    resources :reservations , except: :show
+  end
 
   get "/my_listings", to: "listings#my_listings" , as: "my_listings"
+  get "/my_reservations", to: "reservations#my_reservations", as: "my_reservations"
 
 
   # Example of regular route:

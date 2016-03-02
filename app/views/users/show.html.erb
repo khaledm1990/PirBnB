@@ -18,27 +18,34 @@
 
 
 
-<table class="table table-striped">
-  <tr>
-    <td>Email</td>
-    <td><%= current_user.email %></td>
-  </tr>
-  <tr>
-    <td>First_name</td>
-    <td><%= current_user.first_name %></td>
-  </tr>
+    <table class="table table-striped">
+      <tr>
+        <td>Email</td>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <td>First_name</td>
+        <td><%= current_user.first_name %></td>
+      </tr>
 
-  <tr>
-    <td>last_name</td>
-    <td><%= current_user.last_name %></td>
-  </tr>
-</table>
+      <tr>
+        <td>last_name</td>
+        <td><%= current_user.last_name %></td>
+      </tr>
+    </table>
 
-<div class="btn-group">
-  <%= link_to "Delete" ,user_path(current_user) , method: :delete %>
-  <%= link_to "Edit" , edit_user_path(current_user), method: :get %>
 
-</div>
+    <div class="row">
+      <div >
+        <div class="btn btn-eafult btn-lg btn-block">
+        <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-success" %>
+        </div>
+        <div class="btn btn-deafult btn-lg btn-block">
+            <%= link_to "Delete Account", user_path(current_user), method: :delete, class: "btn btn-danger" %>
+        </div>
+
+      </div>
+    </div>
 
 </div>
 
