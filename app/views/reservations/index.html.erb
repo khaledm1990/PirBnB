@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reservations</h1>
+
+
+<table id="data_table" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th> booking date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @reservations.each do |r| %>
+            <tr>
+                <td><%= r.reservation_owner %></td>
+                <td><%= r.start_date %></td>
+                <td><%= r.end_date %></td>
+                <td><%= r.created_at %></td>
+            </tr>
+            <%end %>
+
+
+
+      </tbody>
+</table>
+
+

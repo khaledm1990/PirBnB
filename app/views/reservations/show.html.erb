@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Reservatoin</h1>
+<div class="col-sm-9 ">
+  <table class="table table-striped">
+
+    <tr>
+      <td><label>Name </label></td>
+      <td><%=@reservation.reservation_owner%></td>
+    </tr>
+    <tr>
+      <td><label> Start date </label></td>
+      <td><%=@reservation.start_date%></td>
+    </tr>
+    <tr>
+      <td><label> End date </label></td>
+      <td><%=@reservation.end_date%></td>
+    </tr>
+
+      <tr>
+      <td><label> Booking date </label></td>
+      <td><%=@reservation.created_at%></td>
+    </tr>
+  </table>
+
+  <button type="button" class="btn btn-success">Print</button>
+</div>
