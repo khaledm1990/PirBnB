@@ -1,4 +1,4 @@
-class Reservation < ApplicationMailer
+class ReservationMailer < ApplicationMailer
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -6,10 +6,13 @@ class Reservation < ApplicationMailer
   #   en.reservation.mailer.subject
 
 
-  def booking_mail (customer, listing)
+  def booking_mailer (customer, listing)
+    # byebug
+    @listing = listing
     @user_first_name = customer.first_name
-    @user_last_name = customer.user_last_name
-    mail to: @cusromer.eamil
+    @user_last_name = customer.last_name
+    mail(to: @listing.user.email, subject: 'New Reservation')
 
   end
+
 end

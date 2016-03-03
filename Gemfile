@@ -46,6 +46,7 @@ gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem "letter_opener", :git => 'git://github.com/cavi21/letter_opener.git'
 end
 
 group :development do

@@ -7,6 +7,13 @@ GIT
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
 
+GIT
+  remote: git://github.com/cavi21/letter_opener.git
+  revision: 3be81cb10e4c71f79278db22aa5e10aca64418f0
+  specs:
+    letter_opener (1.0.0)
+      launchy (>= 2.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +52,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
@@ -92,6 +100,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -198,6 +208,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener!
   mini_magick
   omniauth
   omniauth-facebook
