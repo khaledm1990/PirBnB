@@ -41,8 +41,9 @@ class ReservationsController < ApplicationController
     respond_to do |format|
       if @reservation.save
 
-        byebug
-        ReservationMailer.booking_mailer(current_user,@listing).deliver_now
+        # byebug
+        ReservationJob.perform_later(current_user, @listing)
+
 
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }

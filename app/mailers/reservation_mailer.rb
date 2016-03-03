@@ -7,7 +7,7 @@ class ReservationMailer < ApplicationMailer
 
 
   def booking_mailer (customer, listing)
-    # byebug
+    byebug
     @listing = listing
     @user_first_name = customer.first_name
     @user_last_name = customer.last_name
