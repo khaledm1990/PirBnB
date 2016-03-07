@@ -14,13 +14,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def fb_token
-    x = self.authentications.where(:provider => :facebook).first
-    return x.token unless x.nil?
-  end
-
-  def password_optional?
-    true
-  end
-
 end

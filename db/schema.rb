@@ -25,11 +25,14 @@ ActiveRecord::Schema.define(version: 20160229105722) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "authentications", ["user_id"], name: "index_authentications_on_user_id", using: :btree
+
   create_table "listings", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "about"
     t.string   "property_type"
+    t.string   "price"
     t.string   "room_type"
     t.string   "acommodates"
     t.integer  "bedrooms"
@@ -45,18 +48,29 @@ ActiveRecord::Schema.define(version: 20160229105722) do
     t.json     "images"
   end
 
+  add_index "listings", ["acommodates"], name: "index_listings_on_acommodates", using: :btree
+  add_index "listings", ["bedrooms"], name: "index_listings_on_bedrooms", using: :btree
+  add_index "listings", ["beds"], name: "index_listings_on_beds", using: :btree
+  add_index "listings", ["city"], name: "index_listings_on_city", using: :btree
+  add_index "listings", ["country"], name: "index_listings_on_country", using: :btree
+  add_index "listings", ["price"], name: "index_listings_on_price", using: :btree
+  add_index "listings", ["room_type"], name: "index_listings_on_room_type", using: :btree
+  add_index "listings", ["state"], name: "index_listings_on_state", using: :btree
+  add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "listing_id"
     t.string   "reservation_owner"
-    t.string   "reservation_email"
     t.string   "reservation_ic"
-    t.string   "reservation_card_number"
     t.date     "start_date"
-    t.string   "end_date"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.date     "end_date"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
+
+  add_index "reservations", ["listing_id"], name: "index_reservations_on_listing_id", using: :btree
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

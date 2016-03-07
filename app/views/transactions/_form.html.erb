@@ -1,0 +1,14 @@
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-1 " >
+    <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+      <h2 class="mbs">New Transaction</h2>
+      <%= form_tag reservation_transactions_path do%>
+        <p>Please enter your payment details:</p>
+        <div id="dropin"></div>
+        <%=submit_tag "confirm payment", class: "btn btn-success" %>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <%= form_for([@listing, @reservation]) do |f| %>
-  <% if @reservation.errors.any? %>
+  <% if @ reservation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
@@ -24,25 +24,11 @@
   </div>
 
   <div class="form-group ">
-    <%= f.label :email %>
-    <%= f.text_field :reservation_email, type: "text", placeholder: "Email", class: "form-control" %>
-  </div>
-
-  <div class="form-group ">
-    <%= f.label :card_number %>
-    <%= f.text_field :reservation_card_number, type: "text", placeholder: "card_number", class: "form-control" %>
-  </div>
-
-  <div class="form-group ">
     <%= f.label :Date %>
     <input type="text" name="daterange" id="daterange" />
   </div>
+  <%= f.submit class: "btn btn-success" %>
 
-
-
-  <div class="actions">
-    <%= f.submit class: "btn btn-success" %>
-  </div>
 <% end %>
 
-</div>
+

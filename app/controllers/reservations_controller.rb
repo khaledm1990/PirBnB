@@ -28,6 +28,7 @@ class ReservationsController < ApplicationController
   def create
     # byebug
     @listing = Listing.find(params[:listing_id])
+    # byebug
     @reservation = @listing.reservations.new(reservation_params)
     @reservation[:user_id] = current_user.id
     daterange = params[:daterange]
@@ -42,10 +43,7 @@ class ReservationsController < ApplicationController
       if @reservation.save
 
         # byebug
-        ReservationJob.perform_later(current_user, @listing)
-
-
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+        format.html { redirect_to new_reservation_transaction_path(@listing,@reservation), notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new }
@@ -92,6 +90,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:reservation_owner, :reservation_email, :reservation_card_number, :reservation_ic ,:start_date, :end_date)
+      params.require(:reservation).permit(:reservation_owner, :reservation_ic ,:start_date, :end_date)
     end
 end

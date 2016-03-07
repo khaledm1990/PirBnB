@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
   resources :reservations, only: [:show]
@@ -8,6 +10,9 @@ Rails.application.routes.draw do
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
   end
+
+  resources :transactions, only: [:new, :create]
+
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
@@ -26,12 +31,23 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :reservations , except: :show
+    collection do
+      get :autocomplete
+    end
   end
+
+  resources :reservations, only: [] do
+    resources :transactions, only: [:new, :create]
+  end
+
+  # resources :reservations do
+  #   resources :transactions, only: [:new, :create]
+  # end
 
   get "/my_listings", to: "listings#my_listings" , as: "my_listings"
   get "/my_reservations", to: "reservations#my_reservations", as: "my_reservations"
 
-
+  get "/search", to: "listings#search_listings", as: "search_listings"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

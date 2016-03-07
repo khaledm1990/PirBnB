@@ -2,9 +2,14 @@
 <html>
 <head>
  <title>PairBnB</title>
-
+<%= include_gon %>
+<%= csrf_meta_tags %>
 <%= javascript_include_tag "application" %>
 <%= stylesheet_link_tag "application" %>
+
+
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 
 <!-- Include Required Prerequisites -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -24,9 +29,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-
-
- <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -38,11 +40,10 @@
   </div>
 
 
-<%= render partial: "layouts/navbar" %>
+  <%= render partial: "layouts/navbar" %>
 
-<%= yield %>
-
-
-
+  <div class="container">
+  <%= yield %>
+  </div>
 </body>
 </html>

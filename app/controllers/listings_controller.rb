@@ -10,12 +10,6 @@ class ListingsController < ApplicationController
     @list = Listing.find(params[:id])
   end
 
-  def index
-    # byebug
-    @listings = Listing.all
-    # byebug
-  end
-
   def my_listings
     @my_listings = Listing.where(user_id: current_user.id)
   end
@@ -67,6 +61,19 @@ class ListingsController < ApplicationController
   end
 
 
+  def search_listings
+    # byebug
+    @listings = Listing.search(params[:search])
+  end
+
+  def autocomplete
+    # byebug
+    render json: Listing.search(params[:search], autocomplete: true, limit: 10).map(&:country)
+  end
+
+
+
+
  private
   # Use callbacks to share common setup or constraints between actions.
   def set_listing
@@ -75,7 +82,7 @@ class ListingsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def listing_params
-    params.require(:listing).permit(:image,:about, :title, :adress,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :city, :state, :zip_code, :image)
+    params.require(:listing).permit(:images_cache, :remove_images, :address,:about, :title, :adress,:property_type, :room_type, :acommodates, :bedrooms, :beds, :bathrooms, :country, :price, :city, :state, :zip_code, {images:[]})
   end
 
 

@@ -27,7 +27,7 @@ class SessionsController < Clearance::SessionsController
         redirect_back_or url_after_create
       else
         flash.now.notice = status.failure_message
-        render template: "/"
+        render template: root_path
       end
     end
   end
@@ -59,9 +59,9 @@ class SessionsController < Clearance::SessionsController
     request.env['omniauth.auth']
   end
 
-  def url_after_destroy
-    # byebug
-    root_path
-  end
+  # def url_after_destroy
+  #   # byebug
+  #   root_path
+  # end
 end
 

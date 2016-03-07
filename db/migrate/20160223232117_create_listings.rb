@@ -5,6 +5,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :title
       t.text :about
       t.string :property_type
+      t.string :price
       t.string :room_type
       t.string :acommodates
       t.integer :bedrooms
@@ -17,5 +18,15 @@ class CreateListings < ActiveRecord::Migration
       t.string :zip_code
       t.timestamps null: false
     end
+    add_index :listings, :user_id
+    add_index :listings, :price
+    add_index :listings, :room_type
+    add_index :listings, :acommodates
+    add_index :listings, :bedrooms
+    add_index :listings, :beds
+    add_index :listings, :country
+    add_index :listings, :city
+    add_index :listings, :state
   end
+
 end

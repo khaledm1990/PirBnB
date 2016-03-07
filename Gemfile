@@ -30,7 +30,12 @@ gem 'omniauth-facebook'
 gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'rmagick'
 gem 'mini_magick'
+gem 'fog'
 gem "sidekiq"
+gem 'braintree', '~> 2.33.1'
+gem 'gon', '~> 5.1.2'
+gem 'searchkick'
+
 
 
 # gem 'bootstrap-sass'

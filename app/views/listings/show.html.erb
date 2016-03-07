@@ -1,12 +1,40 @@
 <div class="row">
+
+  </div>
+
+
+<div class="row">
+
   <div class="col-md-6 col-md-offset-1 " >
-    <h1>My  list</h1>
+
+    <div class="col-md-2 col-md-offset-1 " >
+      <% if @listing.images %>
+        <% @listing.images.each do |x| %>
+          <div id="paintings" >
+            <div class="painting">
+                <%= image_tag x.url %>
+            <div class="clear"></div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
     <table class="table table-striped">
 
       <tr>
         <td>Title</td>
         <td><%=@listing.title%></td>
+      </tr>
+      <tr>
+        <td>Adress</td>
+        <td><%=@listing.address%></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Price</td>
+        <td><%=@listing.price%></td>
       </tr>
       <tr>
         <td>property_type</td>
@@ -53,22 +81,17 @@
       <p><%= @listing.about %> </p>
     </div>
 
-    <div class="row">
-      <div >
-        <div class="btn btn-eafult btn-lg btn-block">
-        <%= link_to t(".edit_listing"), edit_listing_path(@listing), class: "btn btn-success" %>
-        </div>
-        <div class="btn btn-deafult btn-lg btn-block">
-            <%= link_to "delete", listing_path(@listing), method: :delete, class: "btn btn-danger" %>
-        </div>
-        <div class="btn btn-eafult btn-lg btn-block">
-            <%= link_to "Reservations", listing_reservations_path(@listing), method: :get, class: "btn btn-primary" %>
-        </div>
-      </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+      <%= link_to t(".edit_listing"), edit_listing_path(@listing), class: "btn btn-success" %>
+      <%= link_to "delete", listing_path(@listing), method: :delete, class: "btn btn-danger" %>
+      <%= link_to "Reservations", listing_reservations_path(@listing), method: :get, class: "btn btn-primary" %>
+
     </div>
 
   </div>
-  <div class="col-md-2">
+
+  <div class="col-md-2 col-md-offset-1">
 
     <div class="panel panel-default">
       <div class="panel-heading">

@@ -4,12 +4,13 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :user_id
       t.integer :listing_id
       t.string :reservation_owner
-      t.string :reservation_email
       t.string :reservation_ic
-      t.string :reservation_card_number
       t.date :start_date
-      t.string :end_date
+      t.date :end_date
       t.timestamps null: false
     end
+
+    add_index :reservations, :user_id
+    add_index :reservations, :listing_id
   end
 end

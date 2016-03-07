@@ -7,5 +7,6 @@ class CreateAuthentications < ActiveRecord::Migration
       t.string :user_id
       t.timestamps null: false
     end
+    add_index :authentications, :user_id
   end
 end
