@@ -36,6 +36,7 @@ gem 'braintree', '~> 2.33.1'
 gem 'gon', '~> 5.1.2'
 gem 'searchkick'
 gem 'puma'
+gem "skylight"
 
 
 
